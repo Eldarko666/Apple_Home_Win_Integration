@@ -20,13 +20,13 @@ Dieses Dokument beschreibt einen vollständigen Entwicklungsplan für eine platt
 | Gateway | IKEA Trådfri, Philips Hue, Eve, Fritz!SmartHome |
 
 ### 1.3 Unterstützte Hersteller (Beispiele)
-- **Ecosystems**: Apple HomeKit, Google Home, Amazon Alexa
-- **Lampen/Leuchten**: Philips Hue, LIFX, Nanoleaf
-- **Schalter/Steckdosen**: IKEA, Shelly, Sonoff
-- **Sensoren**: Aqara, Eve, Fibaro, Bosch
-- **Klimaanlagen**: Daikin, Mitsubishi Electric, Nest
-- **Sicherheit**: Ring, Arlo, Frontpoint
-- **Lokale Gateways**: Fritz!Box, Home Assistant
+- **Ecosystems**: Apple HomeKit, Google Home, Amazon Alexa, Ikea TRÅDFRI, Philips Hue, Samsung SmartThings
+- **Lampen/Leuchten**: Philips Hue, LIFX, Nanoleaf, IKEA, Yeelight
+- **Schalter/Steckdosen**: IKEA, Shelly, Sonoff, TP-Link Kasa, Fibaro, Aqara
+- **Sensoren**: Aqara, Eve, Fibaro, Bosch, IKEA, Xiaomi
+- **Klimaanlagen**: Daikin, Mitsubishi Electric, Nest, Honeywell
+- **Sicherheit**: Ring, Arlo, Frontpoint, IKEA, Bosch, Yale
+- **Lokale Gateways**: Fritz!Box, Home Assistant, Apple HomePod, Google Nest Hub, Ikea TRÅDFRI Gateway, Philips Hue Bridge
 
 ## 2️⃣ Technische Architektur
 
@@ -90,6 +90,10 @@ Dieses Dokument beschreibt einen vollständigen Entwicklungsplan für eine platt
 - IMPLIES (⇒) / IFF (⇔)
 - TEMPORAL: ALWAYS, ONCE, EVERY N MINUTES
 - DURATION: FOR X HOURS, UNTIL Y TIME
+- VALUE-BASED: IF temperature > 25°C THEN...
+- loop: REPEAT UNTIL condition met
+- stateful: Maintain state across triggers
+- event-driven: React to events in real-time
 
 **Trigger-Typen**:
 - Zeitbasiert: Um Mitternacht, Jeden Werktag, 18:00-20:00 Uhr
@@ -185,7 +189,7 @@ Dieses Dokument beschreibt einen vollständigen Entwicklungsplan für eine platt
 |-------|---------|
 | W1-W2 | Matter Support (Thread Gateway) |
 | W3-W4 | Apple HomeKit Native Integration |
-| W5-W6 | Google Home / Alexa Bridge |
+| W5-W6 | Google Home / Alexa Bridge / Ikea TRÅDFRI |
 | W7-W8 | Eve, Philips, Fritz! Gateways |
 | W9-W10 | Linux Portierung & Testing |
 | W11-W12 | Documentation & User Guide |
